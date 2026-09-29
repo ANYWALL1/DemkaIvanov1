@@ -1,0 +1,44 @@
+<Window x:Class="IvanDemka1.AppointmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Запись клиента на услугу" Height="400" Width="500"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Название услуги:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbServiceName" Grid.Column="1" IsReadOnly="True" Background="LightGray"/>
+
+        <TextBlock Grid.Row="1" Text="Длительность (мин):" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbServiceDuration" Grid.Row="1" Grid.Column="1" IsReadOnly="True" Background="LightGray"/>
+
+        <TextBlock Grid.Row="2" Text="Клиент:" VerticalAlignment="Center" Margin="5"/>
+        <ComboBox x:Name="cbClients" Grid.Row="2" Grid.Column="1" DisplayMemberPath="FullName" SelectedValuePath="ID"/>
+
+        <TextBlock Grid.Row="3" Text="Дата:" VerticalAlignment="Center" Margin="5"/>
+        <DatePicker x:Name="dpDate" Grid.Row="3" Grid.Column="1" Margin="5" DisplayDateStart="{x:Static sys:DateTime.Today}"/>
+
+        <TextBlock Grid.Row="4" Text="Время начала (ЧЧ:ММ):" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbStartTime" Grid.Row="4" Grid.Column="1" MaxLength="5" TextChanged="tbStartTime_TextChanged" PreviewTextInput="tbStartTime_PreviewTextInput"/>
+
+        <TextBlock Grid.Row="5" Text="Время окончания:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbEndTime" Grid.Row="5" Grid.Column="1" IsReadOnly="True" Background="LightGray"/>
+
+        <!-- Save button -->
+        <Button Grid.Row="7" Grid.Column="1" Content="Записать" Click="btnSave_Click" Width="120" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>

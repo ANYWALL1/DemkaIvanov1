@@ -1,0 +1,51 @@
+<Application x:Class="IvanDemka1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:IvanDemka1"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Color x:Key="MainBackgroundColor">#FFFFFF</Color>
+        <Color x:Key="SecondaryBackgroundColor">#E1E4FF</Color>
+        <Color x:Key="AccentColor">#FF4A6D</Color>
+
+        <SolidColorBrush x:Key="MainBackgroundBrush" Color="{StaticResource MainBackgroundColor}"/>
+        <SolidColorBrush x:Key="SecondaryBackgroundBrush" Color="{StaticResource SecondaryBackgroundColor}"/>
+        <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+
+        <Style TargetType="Window">
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Background" Value="{StaticResource MainBackgroundBrush}"/>
+            <Setter Property="Icon" Value="Resources/beauty_logo.ico"/>
+        </Style>
+
+        <Style TargetType="Control">
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+        
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Application.Resources>
+</Application>

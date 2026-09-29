@@ -1,0 +1,35 @@
+<Window x:Class="IvanDemka1.UpcomingAppointmentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ближайшие записи" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+    <Grid>
+        <ListView x:Name="lvAppointments" Margin="10" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray" BorderThickness="1" Margin="5" Padding="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel>
+                                <TextBlock Text="{Binding ServiceName}" FontWeight="Bold" FontSize="16"/>
+                                <TextBlock Text="{Binding ClientName}" Margin="0,5"/>
+                                <TextBlock Text="{Binding ClientContacts}" Foreground="DimGray"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding StartDateTime}" FontWeight="Bold" FontSize="14" HorizontalAlignment="Right"/>
+                                <TextBlock Text="{Binding TimeRemaining}" Foreground="{Binding RemainingTimeColor}" 
+                                           FontWeight="Bold" HorizontalAlignment="Right" Margin="0,5,0,0"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>

@@ -1,0 +1,54 @@
+<Window x:Class="IvanDemka1.ServiceEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование услуги" Height="500" Width="600"
+        WindowStartupLocation="CenterScreen"
+        Closed="Window_Closed">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="ID:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbId" Grid.Column="1" IsReadOnly="True" Background="LightGray" Text="Новая запись"/>
+
+        <TextBlock Grid.Row="1" Text="Название:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbTitle" Grid.Row="1" Grid.Column="1"/>
+
+        <TextBlock Grid.Row="2" Text="Стоимость:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbCost" Grid.Row="2" Grid.Column="1"/>
+
+        <TextBlock Grid.Row="3" Text="Длительность (мин):" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbDuration" Grid.Row="3" Grid.Column="1"/>
+
+        <TextBlock Grid.Row="4" Text="Скидка (%):" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbDiscount" Grid.Row="4" Grid.Column="1"/>
+
+        <TextBlock Grid.Row="5" Text="Описание:" Margin="5"/>
+        <TextBox x:Name="tbDescription" Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" Height="60"/>
+
+        <!-- Images -->
+        <TextBlock Grid.Row="6" Text="Главное фото:" Margin="5"/>
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+            <Image x:Name="imgMain" Width="80" Height="80" Margin="5" Stretch="UniformToFill"/>
+            <Button Content="Выбрать фото" Click="btnSelectImage_Click" VerticalAlignment="Center"/>
+        </StackPanel>
+        <TextBlock x:Name="tbImagePath" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center" Margin="5" TextWrapping="Wrap"/>
+
+        <!-- Save button -->
+        <Button Grid.Row="8" Grid.Column="1" Content="Сохранить" Click="btnSave_Click" Width="120" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
